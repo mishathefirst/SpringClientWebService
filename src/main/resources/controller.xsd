@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://baeldung.com/springsoap/gen"
+           targetNamespace="http://baeldung.com/springsoap/gen" elementFormDefault="qualified">
+
+    <xs:element name="getOrganizationRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getOrganizationResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="organization" type="tns:organization"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getOrganizationsRequest">
+        <xs:complexType>
+            <xs:sequence>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getOrganizationsResponse">
+        <xs:complexType>
+            <xs:sequence>
+                    <xs:element name="organization" type="tns:organization" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="updateOrganizationRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="organization" type="tns:organization"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="updateOrganizationResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="organization" type="tns:organization"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="organization">
+        <xs:sequence>
+            <xs:element name="id" type="xs:long"/>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="coordinatex" type="xs:float"/>
+            <xs:element name="coordinatey" type="xs:long"/>
+            <xs:element name="creationDate" type="xs:date"/>
+            <xs:element name="annualTurnover" type="xs:float"/>
+            <xs:element name="type" type="xs:string"/>
+            <xs:element name="street" type="xs:string"/>
+            <xs:element name="town" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
